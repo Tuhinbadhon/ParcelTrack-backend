@@ -4,6 +4,7 @@ import {
   IsNumber,
   IsOptional,
   IsEnum,
+  IsUrl,
 } from "class-validator";
 import { ParcelStatus } from "../schemas/parcel.schema";
 
@@ -20,9 +21,17 @@ export class CreateParcelDto {
   @IsString()
   recipientAddress: string;
 
+  @IsOptional()
+  @IsUrl()
+  recipientMapLink?: string;
+
   @IsNotEmpty()
   @IsString()
   pickupAddress: string;
+
+  @IsOptional()
+  @IsUrl()
+  pickupMapLink?: string;
 
   @IsNotEmpty()
   @IsNumber()

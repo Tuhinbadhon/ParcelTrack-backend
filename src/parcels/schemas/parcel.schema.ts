@@ -33,8 +33,14 @@ export class Parcel {
   @Prop({ required: true })
   recipientAddress: string;
 
+  @Prop()
+  recipientMapLink?: string;
+
   @Prop({ required: true })
   pickupAddress: string;
+
+  @Prop()
+  pickupMapLink?: string;
 
   @Prop({ required: true })
   weight: number;
