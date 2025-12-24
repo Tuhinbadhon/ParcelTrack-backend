@@ -27,6 +27,14 @@ export class UsersController {
       role: UserRole.AGENT,
     });
   }
+  @Post("customers")
+  @Roles(UserRole.ADMIN)
+  createCustomers(@Body() createCustomersDto: any) {
+    return this.usersService.create({
+      ...createCustomersDto,
+      role: UserRole.CUSTOMER,
+    });
+  }
 
   @Get()
   @Roles(UserRole.ADMIN)

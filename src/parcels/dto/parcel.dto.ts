@@ -1,6 +1,11 @@
-import { IsNotEmpty, IsString, IsNumber, IsOptional, IsEnum, IsArray, ValidateNested } from 'class-validator';
-import { Type } from 'class-transformer';
-import { ParcelStatus } from '../schemas/parcel.schema';
+import {
+  IsNotEmpty,
+  IsString,
+  IsNumber,
+  IsOptional,
+  IsEnum,
+} from "class-validator";
+import { ParcelStatus } from "../schemas/parcel.schema";
 
 export class CreateParcelDto {
   @IsNotEmpty()
