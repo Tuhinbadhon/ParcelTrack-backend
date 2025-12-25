@@ -6,7 +6,7 @@ import {
   IsEnum,
   IsUrl,
 } from "class-validator";
-import { ParcelStatus } from "../schemas/parcel.schema";
+import { ParcelStatus, PaymentType } from "../schemas/parcel.schema";
 
 export class CreateParcelDto {
   @IsNotEmpty()
@@ -40,6 +40,10 @@ export class CreateParcelDto {
   @IsOptional()
   @IsString()
   description?: string;
+
+  @IsNotEmpty()
+  @IsEnum(PaymentType)
+  paymentType: PaymentType;
 
   @IsNotEmpty()
   @IsNumber()

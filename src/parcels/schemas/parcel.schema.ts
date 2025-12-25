@@ -13,6 +13,16 @@ export enum ParcelStatus {
   RETURNED = "returned",
 }
 
+export enum PaymentType {
+  COD = "cod",
+  PREPAID = "prepaid",
+}
+
+export enum PaymentStatus {
+  DUE = "due",
+  PAID = "paid",
+}
+
 @Schema({ timestamps: true })
 export class Parcel {
   @Prop({ required: true, unique: true })
@@ -64,6 +74,12 @@ export class Parcel {
 
   @Prop()
   estimatedDelivery?: Date;
+
+  @Prop({ required: true, enum: PaymentType })
+  paymentType: PaymentType;
+
+  @Prop({ required: true, enum: PaymentStatus })
+  paymentStatus: PaymentStatus;
 
   @Prop({ required: true })
   cost: number;
