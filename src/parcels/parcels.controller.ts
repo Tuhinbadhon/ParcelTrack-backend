@@ -92,6 +92,14 @@ export class ParcelsController {
     return this.parcelsService.updateLocation(id, updateLocationDto);
   }
 
+    @Patch(":id/urgent")
+
+  @Patch(':id/urgent')
+  @Roles(UserRole.ADMIN)
+  markUrgent(@Param('id') id: string) {
+    return this.parcelsService.markUrgent(id);
+  }
+
   @Delete(':id')
   @Roles(UserRole.ADMIN)
   remove(@Param('id') id: string) {

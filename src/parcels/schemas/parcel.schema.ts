@@ -31,6 +31,9 @@ export class Parcel {
   @Prop({ type: MongooseSchema.Types.ObjectId, ref: "User", required: true })
   senderId: MongooseSchema.Types.ObjectId;
 
+  @Prop({ required: true })
+  senderName: string;
+
   @Prop({ type: MongooseSchema.Types.ObjectId, ref: "User" })
   agentId?: MongooseSchema.Types.ObjectId;
 

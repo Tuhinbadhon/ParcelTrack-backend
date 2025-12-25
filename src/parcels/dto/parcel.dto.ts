@@ -9,6 +9,10 @@ import {
 import { ParcelStatus, PaymentType } from "../schemas/parcel.schema";
 
 export class CreateParcelDto {
+  @IsOptional()
+  @IsString()
+  senderName: string;
+
   @IsNotEmpty()
   @IsString()
   recipientName: string;
